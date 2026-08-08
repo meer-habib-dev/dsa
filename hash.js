@@ -16,8 +16,29 @@
 
 // pangram;
 
-const str = "thequickbrownfoxjumpsoverthelazydog";
+// const str = "thequickbrownfoxjumpsoverthelazydog";
 
-const has = new Set(str);
+// // const has = new Set(str);
+// let has = new Set();
 
-console.log("has", has.size);
+// for (let i = 0; i < str.length; i++) {
+//   has.add(str.charAt(i));
+// }
+
+// console.log("has", has.size);
+
+// check the frequency of the element in the array;
+
+const arr = [2, 2, 3, 4, 4, 4, 10, 8, 9, 10];
+
+const hash = new Map();
+
+for (let item of arr) {
+  if (hash.has(item)) {
+    hash.set(item, hash.get(item) + 1);
+  } else {
+    hash.set(item, 1);
+  }
+}
+
+console.log(hash);
