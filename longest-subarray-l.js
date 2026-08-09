@@ -1,7 +1,8 @@
 // let arr = [10, 5, 2, 7, 1, -10],
 //   k = 15;
-let arr = [10, 5, 2, 7, 1, -10, -5];
-let k = 14;
+// Longest Subarray with Sum K
+let arr = [0, 1, -1, 2];
+let k = 2;
 let length = 0;
 let sum = 0;
 let map = new Map();
@@ -11,11 +12,13 @@ map.set(0, -1);
 for (let i = 0; i < arr.length; i++) {
   sum += arr[i];
 
-  if (map.get(sum - k) && map.get(sum - k) < i) {
-    length = i - map.get(sum - k);
-  }
+  let requiredSum = sum - k;
 
-  map.set(sum, i);
+  if (map.has(requiredSum)) {
+    let currentLength = i - map.get(requiredSum);
+    length = Math.max(currentLength, length);
+  }
+  if (!map.has(sum)) map.set(sum, i);
 }
 
 console.log("length", length, map);
