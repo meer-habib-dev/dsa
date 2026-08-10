@@ -1,8 +1,9 @@
 // let arr = [10, 5, 2, 7, 1, -10],
 //   k = 15;
 // Longest Subarray with Sum K
-let arr = [0, 1, -1, 2];
-let k = 2;
+let arr = [1, 5, 4, 2, 9, 9, 9],
+  k = 3;
+
 let length = 0;
 let sum = 0;
 let map = new Map();
