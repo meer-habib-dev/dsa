@@ -16,19 +16,30 @@
 // console.log("arr", arr, count, longest);
 let arr = [0, 3, 7, 2, 5, 8, 4, 6, 0, 1];
 let set = new Set(arr);
-let count = 0;
+
 let longest = 0;
 
 for (let i = 0; i < arr.length; i++) {
-  let value = arr[i];
-  if (set.has(value + count)) {
-    while (set.has(value + count)) {
-      count++;
+  //   let value = arr[i];
+  //   if (set.has(value + count)) {
+  //     while (set.has(value + count)) {
+  //       count++;
+  //     }
+  //   } else {
+  //     count = 1;
+  //   }
+  //   longest = Math.max(longest, count);
+
+  if (!set.has(arr[i] - 1)) {
+    let currentNum = arr[i];
+    let length = 1;
+    while (set.has(currentNum + 1)) {
+      length++;
+      currentNum++;
     }
-  } else {
-    count = 1;
+
+    longest = Math.max(longest, length);
   }
-  longest = Math.max(longest, count);
 }
 
-console.log("arr", count, longest);
+console.log("arr", longest);
