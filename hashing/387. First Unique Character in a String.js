@@ -11,17 +11,15 @@
 let s = "loveleetcode";
 
 let frequency = new Map();
-let index = new Map();
 
 for (let i = 0; i < s.length; i++) {
   let currentValue = s[i];
   let count = (frequency.get(currentValue) || 0) + 1;
 
   frequency.set(currentValue, count);
-  index.set(currentValue, i);
 }
 
-for (let [key] of frequency) {
-  if (frequency.get(key) === 1) console.log("key", index.get(key));
+for (let i = 0; i < s.length; i++) {
+  if (frequency.get(s[i]) === 1) console.log("key", i);
 }
 console.log(" req", frequency);
