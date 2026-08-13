@@ -27,3 +27,33 @@ let nums = [2, 2, 1, 1, 1, 2, 2];
    return majEle;
 
 console.log("ele", ele, maj);
+
+
+/*
+
+Complexity
+Time:  O(n) ✅
+Space: O(n) ✅
+
+Later we'll revisit this problem and get:
+
+Time:  O(n)
+Space: O(1) 🔥
+
+using Boyer–Moore Voting.
+
+But don't learn that yet. Right now we're training Hash Maps.
+
+Pattern reinforced
+
+You're starting to see the repetition:
+
+Need to COUNT something?
+
+        ↓
+
+Map
+
+item → frequency
+
+*/ 
