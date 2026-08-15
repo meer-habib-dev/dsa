@@ -1,0 +1,3 @@
+let nums = [1, 1, 1],
+  k = 2;
+Output: 2;
