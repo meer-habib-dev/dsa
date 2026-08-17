@@ -1,27 +1,21 @@
 let nums = [0, 1, 0, 1];
 
 let sum = 0;
-let numsCount = new Map();
+
 let sumCount = new Map();
 let longest = 0;
 
 sumCount.set(0, -1);
 
 for (let i = 0; i < nums.length; i++) {
-  numsCount.set(i, nums[i] === 0 ? -1 : nums[i]);
-}
+  sum += nums[i] === 0 ? -1 : 1;
 
-for (let i = 0; i < nums.length; i++) {
-  sum += numsCount.get(i);
-
-  if (sumCount.has(sum) && sumCount.get(sum) === 0) {
+  if (sumCount.has(sum)) {
     let distance = i - sumCount.get(sum);
     longest = Math.max(longest, distance);
-    console.log("long", longest, distance);
-    continue;
+  } else {
+    sumCount.set(sum, i);
   }
-
-  sumCount.set(sum, i);
 }
 
 console.log("sumcount", longest, sumCount);
