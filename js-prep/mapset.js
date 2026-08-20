@@ -24,3 +24,11 @@ console.log("res", first.difference(second));
 
 const a = [1, 2];
 const b = [2, 3];
+
+const userr = { name: "meer" };
+let usermap = new WeakMap();
+
+usermap.set(userr, { token: "secret" });
+usermap.set('one', { token: "secret" });
+
+console.log(usermap.get(userr));
