@@ -1,4 +1,4 @@
-let nums = [1, 1, 2];
+let nums = [0, 0, 1, 1, 1, 2, 2, 3, 3, 4];
 
 // let i = 0;
 // let j = 0;
@@ -22,7 +22,6 @@ let nums = [1, 1, 2];
 let i = 0;
 let j = 0;
 
-let count = 0;
 while (j < nums.length) {
   let a = nums[i];
   let b = nums[j];
@@ -31,11 +30,9 @@ while (j < nums.length) {
     j++;
   } else {
     i++;
-    let temp = nums[j];
-    nums[j] = nums[i];
-    nums[i] = temp;
-    count++;
+    nums[i] = nums[j];
+    j++;
   }
 }
 
-console.log(nums.slice(0, count));
+console.log(nums, i + 1);
