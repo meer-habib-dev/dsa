@@ -9,9 +9,13 @@ class User {
   getRole() {
     return "devs";
   }
+
+  static createGuest(name) {
+    return new User(name);
+  }
 }
 
-const meer = new User("meer");
+const meer = new User();
 
 class Developer extends User {
   //   constructor(name, skill) {
@@ -35,4 +39,5 @@ dev.introduce();
 dev.code();
 console.log(dev.getRole());
 
-console.log(dev);
+const u = User.createGuest("bir");
+console.log(u.name);
