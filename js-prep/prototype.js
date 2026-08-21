@@ -14,3 +14,7 @@ child.name = "farju";
 console.log("", user.name, child.name);
 delete child.name;
 console.log("", user.name, child.name);
+const arr = [1, 2];
+console.log(Object.getPrototypeOf(user) === Object.prototype);
+console.log(Object.getPrototypeOf(arr) === Array.prototype);
+console.log(user.__proto__ === Object.prototype);
