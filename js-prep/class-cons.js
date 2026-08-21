@@ -1,6 +1,9 @@
 class User {
+  static count = 0;
   constructor(name) {
     this.name = name;
+
+    User.count++;
   }
 
   introduce() {
@@ -40,4 +43,11 @@ dev.code();
 console.log(dev.getRole());
 
 const u = User.createGuest("bir");
-console.log(u.name);
+
+console.log(User.count);
+
+Array.prototype.first = function (array) {
+  return this[0];
+};
+
+console.log([1, 2, 3].first());
