@@ -29,21 +29,23 @@
 
 let nums = [-4, -1, 0, 3, 10];
 
-let result = Array();
+let result = new Array(nums.length);
 
 let i = 0;
 let j = nums.length - 1;
+let write = nums.length - 1;
 
 while (i <= j) {
   let a = nums[i] ** 2;
   let b = nums[j] ** 2;
 
   if (a > b) {
-    result.push(a);
+    result[write] = a;
     i++;
   } else {
-    result.push(b);
+    result[write] = b;
     j--;
   }
+  write--;
 }
-console.log("res", result.reverse());
+console.log("res", result);
