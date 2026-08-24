@@ -50,3 +50,21 @@ function* generateNumbers() {
 for (const number of generateNumbers()) {
   console.log(number);
 }
+
+function* createIdGenerator() {
+  let id = 0;
+
+  while (true) {
+    yield id++;
+  }
+}
+
+const itr = createIdGenerator();
+
+console.log(itr.next());
+console.log(itr.next());
+console.log(itr.next());
+console.log(itr.next());
+console.log(itr.next());
+console.log(itr.next());
+console.log(itr.next());
