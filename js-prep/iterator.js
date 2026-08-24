@@ -1,0 +1,30 @@
+function createIt(nums) {
+  let index = 0;
+  return {
+    next() {
+      if (index < nums.length) {
+        return {
+          value: nums[index++],
+          done: false,
+        };
+      }
+      return {
+        value: undefined,
+        done: true,
+      };
+    },
+  };
+}
+
+const iterator = createIt([10, 20, 30]);
+
+console.log(iterator.next());
+// { value: 10, done: false }
+
+console.log(iterator.next());
+// { value: 20, done: false }
+
+console.log(iterator.next());
+// { value: 30, done: false }
+
+console.log(iterator.next());
