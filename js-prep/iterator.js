@@ -40,3 +40,13 @@ console.log(iteratorsss.next());
 console.log(iteratorsss.next());
 console.log(iteratorsss.next());
 console.log(iteratorsss.next());
+
+function* generateNumbers() {
+  yield 10;
+  yield 20;
+  yield 30;
+}
+
+for (const number of generateNumbers()) {
+  console.log(number);
+}
