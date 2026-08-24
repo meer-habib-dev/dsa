@@ -28,3 +28,15 @@ console.log(iterator.next());
 // { value: 30, done: false }
 
 console.log(iterator.next());
+
+const numbers = [10, 20, 30];
+
+const iteratorsss = numbers[Symbol.iterator]();
+
+console.log(iteratorsss.next());
+console.log(iteratorsss.next());
+console.log(iteratorsss.next());
+console.log(iteratorsss.next());
+console.log(iteratorsss.next());
+console.log(iteratorsss.next());
+console.log(iteratorsss.next());
