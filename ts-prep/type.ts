@@ -14,3 +14,29 @@ let direction: "left" | "right" | "up" | "down"; //literal union type
 type Rating = 1 | 2 | 3;
 
 const rating: Rating = 3;
+
+type UserData = {
+  readonly id: string;
+  name: string;
+};
+
+const userData: UserData = {
+  id: "1",
+  name: "meer",
+};
+
+userData.name = "habib";
+
+type Random = {
+  readonly user: {
+    readonly name: string;
+  };
+};
+
+const random: Random = {
+  user: {
+    name: "meer",
+  },
+};
+
+random.user.name = "hi";
