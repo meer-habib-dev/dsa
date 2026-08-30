@@ -40,3 +40,6 @@ const random: Random = {
 };
 
 random.user.name = "hi";
+
+
+
