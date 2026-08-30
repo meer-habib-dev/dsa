@@ -1,0 +1,10 @@
+let nam = "string";
+
+nam = "20";
+
+const str: string[] = ["a", "b"];
+const strr: Array<string> = ["a", "b"];
+
+const value: (string | number)[] = ["a", 2, "t"];
+
+const userEntry: [number, string, boolean] = [0, "s", true]; //tuples
