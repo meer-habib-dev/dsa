@@ -8,3 +8,9 @@ const strr: Array<string> = ["a", "b"];
 const value: (string | number)[] = ["a", 2, "t"];
 
 const userEntry: [number, string, boolean] = [0, "s", true]; //tuples
+
+let direction: "left" | "right" | "up" | "down"; //literal union type
+
+type Rating = 1 | 2 | 3;
+
+const rating: Rating = 3;
