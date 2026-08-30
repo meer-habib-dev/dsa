@@ -41,5 +41,15 @@ const random: Random = {
 
 random.user.name = "hi";
 
+type Usr = {
+  id: string;
+};
 
+type Adn = User & {
+  id: number;
+};
 
+const userId: Adn = "d";
+
+// type A = {};
+// type A = {};

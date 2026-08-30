@@ -19,3 +19,34 @@ const admin: Admin = {
   createdAt: "10",
   updatedAt: "10",
 };
+
+interface ID {
+  id: string;
+}
+
+interface UserId extends ID {}
+
+const userID: UserId = {
+  id: "sdf",
+};
+
+interface A {
+  id: number;
+}
+interface A {
+  age: number;
+}
+
+interface Logger {
+  log(message: string): void;
+  error(message: string): void;
+}
+
+class User implements Logger {
+  log(message: string): void {
+    console.log(message + "hello");
+  }
+  error(message: string): void {
+    console.log(message + "error");
+  }
+}
