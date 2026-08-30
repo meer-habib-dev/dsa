@@ -53,3 +53,17 @@ const userId: Adn = "d";
 
 // type A = {};
 // type A = {};
+
+type Result =
+  | { success: true; data: string }
+  | { success: false; error: Error };
+
+type Data = Result & {
+  time: Date;
+};
+
+const userD: Data = {
+  success: true,
+  data: "",
+  time: new Date(),
+};
