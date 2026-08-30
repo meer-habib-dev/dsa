@@ -53,41 +53,51 @@
 // //   }
 // // }
 
-let s = "xywrrmp",
-  t = "xywrrmu#p";
+/**
+ * @param {string} s
+ * @param {string} t
+ * @return {boolean}
+ */
+var backspaceCompare = function (s, t) {
 
-let strOne = "";
-let strTwo = "";
 
-let i = s.length - 1;
-let j = t.length - 1;
 
-let count = 0;
-let countJ = 0;
+    let strOne = "";
+    let strTwo = "";
 
-while (i >= 0 || j >= 0) {
-  let currentVal = s[i];
-  let currentValJ = t[j];
+    let i = s.length - 1;
+    let j = t.length - 1;
 
-  if (currentVal === "#") {
-    count++;
-  } else if (count > 0) {
-    count--;
-  } else if (i >= 0) {
+    let count = 0;
+    let countJ = 0;
 
-    strOne = strOne += currentVal;
-  }
+    while (i >= 0 || j >= 0) {
+        let currentVal = s[i];
+        let currentValJ = t[j];
 
-  if (currentValJ === "#") {
-    countJ++;
-  } else if (countJ > 0) {
-    countJ--;
-  } else {
-    strTwo = strTwo += currentValJ;
-  }
+        if (i >= 0) {
+            if (currentVal === "#") {
+                count++;
+            } else if (count > 0) {
+                count--;
+            } else {
+                strOne += currentVal;
+            }
+            i--;
+        }
 
-  j--;
-  i--;
-}
+        if (j >= 0) {
+            if (currentValJ === "#") {
+                countJ++;
+            } else if (countJ > 0) {
+                countJ--;
+            } else {
+                strTwo += currentValJ;
+            }
 
-console.log("s", strOne, strTwo);
+            j--;
+        }
+    }
+
+    return strOne === strTwo;
+};
