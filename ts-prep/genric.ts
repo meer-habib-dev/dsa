@@ -48,3 +48,14 @@ function mergeObjects<T, U>(obj1: T, obj2: U): T & U {
 
 mergeObjects({ name: "meer" }, { age: 30 });
 mergeObjects({ name: "meer" }, { age: 30 });
+
+function getProperty<T, k extends keyof T>(obj: T, key: k): T[k] {
+  return obj[key];
+}
+
+const user = {
+  name: "meer",
+  age: 30,
+};
+
+getProperty<typeof user, "name">(user, "name");
