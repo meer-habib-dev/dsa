@@ -33,3 +33,18 @@ function getById<T extends hasId>(value: T): T {
 }
 
 getById({ id: "1", name: "meer" });
+
+function createPair<K, V>(key: K, value: V): [K, V] {
+  return [key, value];
+}
+
+createPair<string, number>("meer", 30);
+createPair<number, number>(30, 30);
+createPair<{ name: string }, { age: number }>({ name: "meer" }, { age: 30 });
+
+function mergeObjects<T, U>(obj1: T, obj2: U): T & U {
+  return { ...obj1, ...obj2 };
+}
+
+mergeObjects({ name: "meer" }, { age: 30 });
+mergeObjects({ name: "meer" }, { age: 30 });
