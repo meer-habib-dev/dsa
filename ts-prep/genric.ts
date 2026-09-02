@@ -67,3 +67,27 @@ const roles = {
 };
 
 type rolesType = keyof typeof roles;
+
+type rolesValue = (typeof roles)[rolesType];
+
+type values = (typeof roles)[keyof typeof roles];
+
+type RouteConfig = Record<
+  string,
+  {
+    name: string;
+    protected: boolean;
+  }
+>;
+
+const routes = {
+  home: {
+    name: "Home",
+    protected: false,
+  },
+  profile: {
+    name: "Profile",
+    protected: true,
+  },
+} satisfies RouteConfig;
+
