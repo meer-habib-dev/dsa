@@ -59,3 +59,11 @@ const user = {
 };
 
 getProperty<typeof user, "name">(user, "name");
+
+const roles = {
+  admin: "admin",
+  user: "user",
+  guest: "guest",
+};
+
+type rolesType = keyof typeof roles;
